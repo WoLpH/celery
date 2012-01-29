@@ -34,6 +34,7 @@ class Message(object):
         msg["Subject"] = self.subject
         msg["From"] = self.sender
         msg["To"] = ", ".join(self.to)
+        msg["X-Mailjet-Campaign"] = "celery-errors"
         return msg.as_string()
 
 
